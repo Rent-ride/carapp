@@ -10,7 +10,6 @@ function CardSection() {
       Aos.init({
         once : false
       })
-      window.scrollTo(0,0)
     },[])
   return (
     <section className='w-[80%] mx-auto my-14 lg:h-[70vh]'>
