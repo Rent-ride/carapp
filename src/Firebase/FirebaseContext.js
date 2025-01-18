@@ -31,15 +31,12 @@ const firebaseConfig = {
 //------->Manage Admin
 
  async function manageAdmin({email,password}) {
-   await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-    // User successfully logged in
-    const user = userCredential.user;
+  try {
+    await signInWithEmailAndPassword(auth, email, password)
     window.location.replace("/allcars");
-    return user;
-  })
-  .catch((error) => {
-    throw error;
-  });
+  } catch (error) {
+    toast.error(error.message)
+  }
 }
 
 async function resetPass(email){

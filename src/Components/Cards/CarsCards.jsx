@@ -1,12 +1,20 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React,{useEffect} from "react";
 import { FaCarAlt } from "react-icons/fa";
 import { MdLocalGasStation } from "react-icons/md";
+import "aos/dist/aos.css"
+import Aos from 'aos'
+
 const CarsCards = (props) => {
   const cloudName=process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
-  
+  useEffect(()=>{
+    Aos.init({
+      once : false
+    })
+  },[])
   return (
-    <div className="border border-[#C4C4C4] rounded-xl  hover:shadow-xl transition-all duration-300 hover:border-[#FD8D14] shadow-lg">
+    <div className="border border-[#C4C4C4] rounded-xl  hover:shadow-xl transition-all duration-300 hover:border-[#FD8D14] shadow-lg" data-aos="fade-up" data-aos-duration="600">
       <div>
         
         <div className="relative h-[400px] rounded-xl">

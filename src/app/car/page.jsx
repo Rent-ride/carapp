@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
+
 function page() {
   const [data,setData]=useState()
   const {getAllCars}=useFirebase()
@@ -25,7 +26,7 @@ function page() {
   
   return (
     <section>
-      <div className="md:h-[80vh] h-[50vh] relative w-full bg-red-600 z-10">
+      <div  className="md:h-[80vh] h-[50vh] relative w-full bg-red-600 z-10" >
         <div className="bg-black/50  inset-0 absolute z-10" />
         <Image src={"/car.jpg"} alt="car" fill className="object-cover " />
       </div>

@@ -1,13 +1,21 @@
-import React from "react";
+"use client"
+import React,{useEffect} from "react";
 import Image from "next/image";
+import "aos/dist/aos.css"
+import Aos from 'aos'
 
 const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 function DriverCard({ data }) {
+  useEffect(()=>{
+      Aos.init({
+        once : false
+      })
+  },[])
   const age = new Date().getFullYear() - new Date(data.age).getFullYear();
 
   return (
-    <div className=" border  border-[#C4C4C4] rounded-xl  hover:shadow-xl transition-all duration-300 hover:border-[#FD8D14]">
+    <div className=" border  border-[#C4C4C4] rounded-xl  hover:shadow-xl transition-all duration-300 hover:border-[#FD8D14]" data-aos="fade-up" data-aos-duration="600">
       <div className="relative h-[425px] rounded-xl  ">
         <Image
           src={

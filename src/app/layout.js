@@ -1,9 +1,11 @@
+
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/Components/Menu/NavBar";
 import SupportSection from "@/Components/Home/SupportSection";
 import FirebaseProvider from "@/Firebase/FirebaseContext"
 import { Toaster } from "react-hot-toast";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,6 +26,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
+
   return (
     <html lang="en">
       <body

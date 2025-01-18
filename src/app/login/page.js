@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useFirebase } from "@/Firebase/FirebaseContext";
-import toast from "react-hot-toast";
+
 
 function Login() {
   useEffect(() => {
@@ -13,7 +13,6 @@ function Login() {
     password: "",
   });
   const [recoveryMail, setRecoveryMail] = useState("");
-  const [loading, setLoading] = useState(false);
   const [showResetPassword, setShowResetPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState({});
   const firebase = useFirebase();
@@ -34,12 +33,9 @@ function Login() {
       setErrorMessage(allerrors)
       return;
     }
-    try {
-      const user = firebase.manageAdmin(adminCredentials);      
-    } catch (error) {
-      console.log("Error occured :", error);
-      toast.error(error.message);
-    }
+    
+      const user = firebase.manageAdmin(adminCredentials);
+  
   };
 
   const handleResetPassword = (e) => {

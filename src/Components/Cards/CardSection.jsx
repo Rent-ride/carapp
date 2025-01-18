@@ -1,14 +1,18 @@
-import React from 'react'
+"use client"
+import React,{useEffect} from 'react'
 import Card from '@/Components/Cards/Card'
-import { IoCarOutline } from "react-icons/io5";
-import { BsPerson } from "react-icons/bs";
-import { PiSteeringWheelLight } from "react-icons/pi";
 import Link from 'next/link';
-
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 function CardSection() {
+  useEffect(()=>{
+      Aos.init({
+        once : false
+      })
+    },[])
   return (
-    <section className='w-[80%] mx-auto my-14 lg:h-[70vh]'>
+    <section className='w-[80%] mx-auto my-14 lg:h-[70vh]'data-aos="fade-up" data-aos-duration="700">
       <header className="text-center my-20">
         <h1 className="text-5xl font-semibold text-gray-800 my-4 tracking-wide">Our Services</h1>
         <p className="text-xl text-gray-600">

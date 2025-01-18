@@ -3,10 +3,15 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
+import "aos/dist/aos.css"
+import Aos from "aos";
 
 function Contact() {
   useEffect(() => {
     document.title = "Contact | Rent-Ride";
+    Aos.init({
+            once : false
+          })
   }, []);
   const phoneNumber=+923077588129
   const preFilledMessage = 'Hello, I\'m interested in renting a car';
@@ -14,7 +19,7 @@ function Contact() {
   const link = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(preFilledMessage)}`;
  
   return (
-    <main className="">
+    <main>
       <div className="md:h-[80vh] h-[50vh] relative w-full bg-red-600 -z-10">
         <div className="bg-black/50  inset-0 absolute z-10" />
         <Image
@@ -25,7 +30,8 @@ function Contact() {
         />
       </div>
       <h1 className="text-center my-14 font-semibold text-5xl tracking-wide text-gray-800">Contact Us</h1>
-      <div className="border-2 border-black max-w-max mx-4 sm:mx-auto shadow-xl p-4 rounded-md bg-slate-100 flex flex-col items-center gap-2">
+      <div data-aos="fade-up" data-aos-duration="600">
+      <div className="border-2 border-black max-w-max mx-4 sm:mx-auto shadow-xl p-4 rounded-md bg-slate-100 flex flex-col items-center gap-2" >
         <h1 className="font-bold text-2xl">Information</h1>
         <p className="font-semibold text-lg">Phone : <span className="font-normal text-base">+92 307 7588129</span></p>
         <p className="text-center font-medium text-lg">Address : <span className="font-normal text-base">Rent Ride Zaman Colony main Muzafar Garh road near Police Lines Jauharabad,Khushab</span></p>
@@ -41,6 +47,7 @@ function Contact() {
         form below, and one of our friendly team members will get back to you as
         soon as possible
       </p>
+      </div>
     </main>
   );
 }

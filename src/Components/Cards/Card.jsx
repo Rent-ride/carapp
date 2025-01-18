@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 
-
-function Card({icon,title,color,description}) {
+function Card({title,color,description}) {
+  
   return (
     <div className='border-2  flex flex-col items-center rounded-lg cursor-pointer hover:scale-[1.03] transition ease-in duration-150 h-full'>
         <div className={`${color ? "bg-[#fd8d14]" : "bg-[#0d274e]"} text-white inline-block p-3 rounded-[50%] absolute translate-y-[-50%] shadow-lg`}><Image src={"/logo.png"} alt='photo' width={50} height={50}/></div>
