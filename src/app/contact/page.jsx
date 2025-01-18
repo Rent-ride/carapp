@@ -12,6 +12,7 @@ function Contact() {
     Aos.init({
             once : false
           })
+          window.scrollTo(0,0)
   }, []);
   const phoneNumber=+923077588129
   const preFilledMessage = 'Hello, I\'m interested in renting a car';

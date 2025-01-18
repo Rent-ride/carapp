@@ -10,10 +10,11 @@ function CardSection() {
       Aos.init({
         once : false
       })
+      window.scrollTo(0,0)
     },[])
   return (
-    <section className='w-[80%] mx-auto my-14 lg:h-[70vh]'data-aos="fade-up" data-aos-duration="700">
-      <header className="text-center my-20">
+    <section className='w-[80%] mx-auto my-14 lg:h-[70vh]'>
+      <header className="text-center my-20" data-aos="fade-up" data-aos-duration="700">
         <h1 className="text-5xl font-semibold text-gray-800 my-4 tracking-wide">Our Services</h1>
         <p className="text-xl text-gray-600">
           Explore our range of services designed to make your driving experience better.

@@ -19,6 +19,7 @@ const page = () => {
        });
        setData(instructorsArray)
       }
+      
     )
     },[])
   return (
