@@ -12,7 +12,14 @@ function DriverCard({ data }) {
         once : false
       })
   },[])
-  const age = new Date().getFullYear() - new Date(data.age).getFullYear();
+
+  const dob=data.age
+  function calculateAge(dob) {
+    const dateofBirth=new Date(dob);
+    const dateInMs=Date.now()-dateofBirth.getTime();
+    const age=new Date(dateInMs)
+    return Math.abs(age.getUTCFullYear() - 1970)
+ }
 
   return (
     <div className=" border  border-[#C4C4C4] rounded-xl  hover:shadow-xl transition-all duration-300 hover:border-[#FD8D14]" data-aos="fade-up" data-aos-duration="600">
@@ -37,7 +44,7 @@ function DriverCard({ data }) {
         </p>
         <p>
           <span className="font-semibold">Age : </span>
-          {age} Years
+          {calculateAge(dob)} Years
         </p>
         <p className="my-2">
           <span className=" font-semibold">Experience : </span>

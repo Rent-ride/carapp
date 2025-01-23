@@ -20,9 +20,14 @@ function InstructorCard(props) {
   }
 
   
-  const name=process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
-  const age=new Date().getFullYear() - new Date(props.data.age).getFullYear()  
- 
+  const name=process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const dob=props.data.age
+  function calculateAge(dob) {
+    const dateofBirth=new Date(dob);
+    const dateInMs=Date.now()-dateofBirth.getTime();
+    const age=new Date(dateInMs)
+    return Math.abs(age.getUTCFullYear() - 1970)
+ }
   
   return (
     <main className="border-2 lg:border-3 border-gray-600 my-8 flex p-3 w-[95%] md:w-[85%] mx-auto ">
@@ -50,7 +55,7 @@ function InstructorCard(props) {
             </p>
             <p>
               <span className="font-medium">Age :</span>{" "} 
-                {age} Years
+                {Number(calculateAge(dob))} Years
             </p>
             <p>
               <span className="font-medium">Duration :</span>{" "}
