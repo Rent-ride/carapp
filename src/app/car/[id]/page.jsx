@@ -160,10 +160,10 @@ const page = () => {
                 <h2 className="text-2xl font-semibold">Calculate Fare</h2>
                 <div className="my-2 flex flex-col">
                   <label>Enter Distance(in Kilometers)</label>
-                  <input type="number" placeholder="Distance" className="border-2 border-black px-3 py-2 rounded-md" onChange={(e)=>setDistance(e.target.value)} value={distance}/>
+                  <input type="number" placeholder="Distance" className="border-2 border-black px-3 py-2 rounded-md" onChange={(e)=>setDistance(Math.abs(e.target.value))} value={distance == 0 ? "" : distance}/>
                 </div>
                 {
-                  distance && <p className="font-bold">Rs : <span className="font-normal">{distance * item.farePerKm}</span></p> 
+                  distance > 0 && <p className="font-bold">Rs : <span className="font-normal">{distance * item.farePerKm}</span></p> 
                 }
               </div>
             </div>
